@@ -1,10 +1,10 @@
-# IFP-PPI
-Interaction Frequency Predict Protein-Protein Interaction (IFP-PPI)
+# IFP-IN
+Interaction Frequency Predict Interaction Network (IFP-IN)
 
 E-mail: 18434753515@163.com
 ## Introduction
 
-IFP-PPI is a tool for building gene association networks that use the interaction frequency of chromosome segments in space to estimate the spatial interaction frequency between genes and identify chromosomal interaction regions (CIDs). With normalized or unnormalized IF matrices and bacterial genome-wide Genbank annotation files as inputs, the software will construct the gene association network, identify the CIDs, and export the network as a file.
+IFP-IN is a tool for building gene/protein interaction networks that use the interaction frequency of chromosome segments in space to estimate the spatial interaction frequency between genes and identify chromosomal interaction regions (CIDs). With normalized or unnormalized IF matrices and bacterial genome-wide Genbank annotation files as inputs, the software will construct the gene/protein interaction network, identify the CIDs, and export the network as a file.
 
 
 ## Installation
@@ -21,7 +21,7 @@ You may alternatively install using the following `conda` commands shown below, 
     conda env create -f environment.yaml -n new_env_name
 
 
-##  How to use IFP-PPI?
+##  How to use IFP-IN?
 
 ### Parameters
 | Parameter |Full name| Description| Default 
@@ -42,18 +42,18 @@ You may alternatively install using the following `conda` commands shown below, 
 
 ### Usage
 
-    python IFP-PPI.py -i [input folder] -gb [genbank] -im [IFmatrix] -ir [IFmatrixResolution] [...]
+    python IFP-IN.py -i [input folder] -gb [genbank] -im [IFmatrix] -ir [IFmatrixResolution] [...]
 
 #### For example
 
  - Single-chromosome
 The GSM2870409 sample of *Escherichia coli* K-12 MG1655 was taken is an example to demonstrate the complete function.
 ````
-    # Run IFP-PPI
-     python IFP-PPI.py -i input -gb U00096.3.gb -im GSM2870409_1000_iced.matrix -ir 1000 -cm GSM2870409_10000_iced.matrix -cr 10000 -o output
+    # Run IFP-IN
+     python IFP-IN.py -i input -gb U00096.3.gb -im GSM2870409_1000_iced.matrix -ir 1000 -cm GSM2870409_10000_iced.matrix -cr 10000 -o output
     ------------------------------
 	2022-08-13 18:32:32
-	Run IFP-PPI
+	Run IFP-IN
 	
 	------------------------------
 	2022-08-13 18:32:32
@@ -77,11 +77,11 @@ The GSM2870409 sample of *Escherichia coli* K-12 MG1655 was taken is an example 
  - Multi-chromosome
  The SRR3180951 sample of *Vibrio cholerae*  was taken is an example to demonstrate the complete function.
  ````
- #Run IFP-PPI
-python IFP-PPI.py -i input -p 1 -gbc vibrio_cholerae_1.gb/vibrio_cholerae_2.gb -im SRR3180951_1000_iced.matrix -ir 1000 -cm SRR3180951_10000_iced.matrix -cr 10000 -o output -b 1
+ #Run IFP-IN
+python IFP-IN.py -i input -p 1 -gbc vibrio_cholerae_1.gb/vibrio_cholerae_2.gb -im SRR3180951_1000_iced.matrix -ir 1000 -cm SRR3180951_10000_iced.matrix -cr 10000 -o output -b 1
 ------------------------------
 2022-08-25 17:04:16
-Run IFP-PPI
+Run IFP-IN
 
 ------------------------------
 2022-08-25 17:04:16
